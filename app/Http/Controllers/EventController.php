@@ -331,7 +331,13 @@ class EventController extends Controller
     {
         $ticket= Ticket::all()->last();
 //         dd($ticket);
-        return view("viewTicket", compact("ticket"));
+        if(count((array)$ticket)==null) {
+            return "No ticket is available";
+        }
+        else {
+            return view("viewTicket", compact("ticket"));
+        }
+
     }
     public function isdisable(Request $request)
     {

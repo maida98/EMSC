@@ -5,7 +5,7 @@
 <div class="container">
     <div class="card">
         <div class="card-header" style="background-color: #3964B7">
-            <strong class="card-title text-white mt-3">{{$society->title}}</strong>
+            <strong class="card-title text-white mt-3">Events</strong>
         </div>
         <div class="card-body">
             <!-- Credit Card -->
