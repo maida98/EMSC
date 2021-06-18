@@ -146,7 +146,7 @@ class EventController extends Controller
 
 
             $societies = Society::all();
-            return view ('viewEvents', compact($societies));
+            return view ('viewEvents', compact('societies'));
 
         }
 

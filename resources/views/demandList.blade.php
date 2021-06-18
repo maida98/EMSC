@@ -38,7 +38,7 @@
     @endif
     @endrole
     @role('student_affairs')
-    @if(count($events)!=null)
+    @if(count($societies)!=null)
     <form action="{{route('eventActions')}}" method="post">
         @csrf
         <input type="hidden" value="{{$societies}}">

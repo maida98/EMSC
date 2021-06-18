@@ -29,10 +29,7 @@
                         <button class="btn btn-success" style="width: 100%;"  type="submit"
                             name="demandList" value="{{$event->id}}">DEMAND LIST</button>
                     </div>
-                    {{-- <div class="action mb-3 col-md-6">
-                            <button class="btn btn-outline-info btn-lg" style="width: 100%;" type="submit"
-                                name="view" value="{{$event->id}}">VIEW EVENT DETAILS</button>
-                </div> --}}
+                  
                 <div class="action mb-3 col-md-6">
                     <button class="btn btn-info" style="width: 100%;" type="submit" name="edit"
                         value="{{$event->id}}">VIEW/MODIFY EVENT DETAILS</button>
@@ -63,7 +60,7 @@
 @endif
 @endrole
 @role('student_affairs')
-@if(count($events)!=null)
+@if(count($societies)!=null)
 <form action="{{route('eventActions')}}" method="post">
     @csrf
     <input type="hidden" value="{{$societies}}">
@@ -110,16 +107,7 @@
                     </div>
 
                 </div>
-                {{-- <div class="col-md">
-
-                            <div class="action mb-3">
-                                <p>organisers:</p>
-                                @foreach($event->user as $org)
-                                <p>{{$org->name}}</p>
-                @endforeach
-            </div>
-
-        </div> --}}
+            
     </div>
     </div>
 </div>
