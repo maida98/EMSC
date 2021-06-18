@@ -208,7 +208,7 @@
             <a onclick="parent.LC_API.open_chat_window();return false;" href="#" class="link"
                data-toggle="modal" data-target="#exampleModalLong">Live Chat</a>
 
-{{--            start--}}
+                {{--            start--}}
 
             <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -227,7 +227,7 @@
                             <div class="card no-border">
                                 <div id="chat" class="conv-form-wrapper">
                                     <form action="" method="GET" class="hidden">
-                                        <select data-conv-question="Hello! I'm a bot created from a Comsats University Islamabad (Event Management Team). Can I show you some features? (this question comes from a select)" name="first-question">
+                                        <select data-conv-question="Hello! I'm a bot created from  Comsats University Islamabad (Event Management Team). Can I show you some features? (this question comes from a select)" name="first-question">
                                             <option value="yes">Yes</option>
                                             <option value="sure">Sure!</option>
                                         </select>
@@ -240,18 +240,17 @@
                                             <option value="Country">Hockey</option>
                                             <option value="Classic">Badminton</option>
                                         </select>
-                                        <select name="programmer" data-callback="storeState" data-conv-question="Do you want to know about the latest event? )">
+                                        <select name="programmer" data-callback="storeState" data-conv-question="Do you want to know about the latest event? ">
                                             <option value="yes">Yes</option>
                                             <option value="no">No</option>
                                         </select>
                                         <div data-conv-fork="programmer">
                                             <div data-conv-case="yes">
-                                                <input type="text" data-conv-question="latest event is Cricket. held in cricket ground" data-no-answer="true">
+                                                <input type="text" data-conv-question="Latest event is Cricket going to be held in cricket ground" data-no-answer="true">
                                             </div>
                                             <div data-conv-case="no">
-                                                <select name="thought" data-conv-question="oh so thank you for message us?">
-                                                    <option value="yes">Yes</option>
-                                                    <option value="no">No..</option>
+                                                <select name="thought" data-conv-question=" Thank you for messaging us">
+                                                   
                                                 </select>
                                             </div>
                                         </div>
@@ -259,7 +258,7 @@
                                         <input data-conv-question="Type in your e-mail" data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" id="email" type="email" name="email" required placeholder="What's your e-mail?">
 
                                         </select>
-                                        <select data-conv-question="Please touch our website for more information. Thank you." id="">
+                                        <select data-conv-question="Please keep in touch with our website for more information. Thank you." id="">
 
                                         </select>
                                     </form>

@@ -8,7 +8,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header" style="background-color: #3964B7;">
-                        {{-- <strong class="card-title">{{ $participant->event->title }} Participants</strong> --}}
+                    
                         <strong class="card-title text-white">ORGANIZERS</strong>
                     </div>
                     <div class="card-body">
@@ -39,17 +39,7 @@
 
                                 @endforeach
                             @endforeach
-                            {{--                            @foreach ($organisers as $organiser)--}}
-
-                            {{--                            @if ($organiser->event)--}}
-                            {{--                            <tr>--}}
-                            {{--                                <td>{{ $organiser-> name}}</td>--}}
-                            {{--                                <td>{{ $organiser-> reg_no}}</td>--}}
-                            {{--                                <td>{{ $organiser-> phone}}</td>--}}
-                            {{--                                <td>{{ $organiser-> event->title}}</td>--}}
-                            {{--                            </tr>--}}
-                            {{--                            @endif--}}
-                            {{--                            @endforeach--}}
+                            
                             </tbody>
                         </table>
                     </div>
