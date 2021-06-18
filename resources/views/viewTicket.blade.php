@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+@if($ticket)
 <div class="card">
     <div class=" ">
         <h3 class="card-header text-white" style="background-color: #3964B7;" ><b>Tickets</b></h3>
@@ -11,7 +11,7 @@
         <form action="{{url('disable/enable')}}" method="POST">
         @csrf
             <input type="hidden" value={{$ticket->id}} name="ticket" />
-        @for($i = 1; $i< $ticket->quantity ; $i++ )
+        @for($i = 0; $i< $ticket->quantity ; $i++ )
         <div class="form-group">
             <label for="subject">Event Name</label>
             <input type="text" class="form-control"
@@ -31,34 +31,19 @@
         <button type="submit" class="btn text-white bg-success"  onclick="window.print()"
         >Print</button>
         </form>
+       
         <br>
     </div>
 </div>
+@else
+<div class=" ">
+        <h3 class="card-header text-white" style="background-color: #3964B7;" ><b>No Tickets Yet</b></h3>
+    </div>
+
+@endif
+
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script>
-
-
-//    $(document).ready(function () {
-//        $("form").submit(function (event) {
-//            var formData = {
-//                name: $("#name").val(),
-//                email: $("#email").val(),
-//                superheroAlias: $("#superheroAlias").val(),
-//            };
-//
-//            $.ajax({
-//                type: "POST",
-//                url: "disable/enable",
-//                data: formData,
-//
-//
-//            }).done(function (data) {
-//                console.log(data);
-//            });
-//
-//            event.preventDefault();
-//        });
-//    });
 
 
 </script>

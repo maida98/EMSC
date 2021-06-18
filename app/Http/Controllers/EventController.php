@@ -132,17 +132,21 @@ class EventController extends Controller
 
         if($user->hasRole('student_affairs'))
         {
-            if($events->count() != null)
-            {
-                $societies = Society::all();
-                return view('viewEvents',compact('societies'));
+            // if($events->count() != null)
+            // {
+            //     $societies = Society::all();
+            //     return view('viewEvents',compact('societies'));
 
-            }
-            else
-            {
-                return "No events yet";
+            // }
+            // else
+            // {
+            //     return "No events yet";
 
-            }
+            // }
+
+
+            $societies = Society::all();
+            return view ('viewEvents', compact($societies));
 
         }
 
@@ -152,16 +156,15 @@ class EventController extends Controller
 
             $society = $user->society;
             $events = Event::all();
-            if(count($events) != null)
-            {
+            // if(count($events) != null)
+            // {
                 $events = $society->events;
                 return view('viewEvents',compact('events', 'societies'));
-            }
-            else
-            {
-                return "No events yet";
+            // else
+            // {
+            //     return "No events yet";
 
-            }
+            // }
         }
 
 
@@ -330,13 +333,8 @@ class EventController extends Controller
     public function viewTickets()
     {
         $ticket= Ticket::all()->last();
-//         dd($ticket);
-        if(count((array)$ticket)==null) {
-            return "No ticket is available";
-        }
-        else {
-            return view("viewTicket", compact("ticket"));
-        }
+            return view("viewTicket", compact('ticket'));
+        
 
     }
     public function isdisable(Request $request)

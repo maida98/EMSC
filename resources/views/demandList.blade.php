@@ -6,6 +6,7 @@
 <div class="container">
 
     @role('society_head')
+    @if(count($events)!=null)
     <form action="{{route('eventActions')}}" method="post">
         @csrf
         <input type="hidden" value="{{$events}}">
@@ -29,8 +30,15 @@
         </div>
         @endforeach
     </form>
+    @else
+        
+<div class="card">
+        <h3 class="card-header text-white" style="background-color: #3964B7;" ><b>No Demand List</b></h3>
+         </div>
+    @endif
     @endrole
     @role('student_affairs')
+    @if(count($events)!=null)
     <form action="{{route('eventActions')}}" method="post">
         @csrf
         <input type="hidden" value="{{$societies}}">
@@ -60,8 +68,15 @@
         @endforeach
             @endif
     </form>
+    @else
+        
+    <div class="card">
+        <h3 class="card-header text-white" style="background-color: #3964B7;" ><b>No Demand List</b></h3>
+         </div>
+    @endif
     @endrole
     @role('organiser')
+    @if(count($events)!=null)
     <form action="{{route('eventActions')}}" method="post">
         @csrf
         <input type="hidden" value="{{$events}}">
@@ -84,6 +99,12 @@
             </div>
         @endforeach
     </form>
+    @else
+        
+<div class="card">
+        <h3 class="card-header text-white" style="background-color: #3964B7;" ><b>No Demand List</b></h3>
+         </div>
+         @endif
     @endrole
 
 

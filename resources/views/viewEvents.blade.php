@@ -3,6 +3,7 @@
 
 @section('content')
 @role('society_head')
+@if(count($events)!=null)
 <input type="hidden" value="{{$events}}">
 <!-- =================================event==================================== -->
 <form action="{{route('eventActions')}}" method="post">
@@ -11,8 +12,8 @@
     @foreach($events as $event)
     <div class="container mt-5">
     <div class="card">
-  <h3 class="card-header text-white" style="background-color: #3964B7;" ><b>{{$event->title}} ( {{$event->society->title}} )</b></h3>
-  <div class="card-body">
+        <h3 class="card-header text-white" style="background-color: #3964B7;" ><b>{{$event->title}} ( {{$event->society->title}} )</b></h3>
+        <div class="card-body">
   
     <h4><b>VENUE</b></h4>
     <div class="ml-4">
@@ -52,9 +53,17 @@
 
 <!-- extra end -->
 
+
 <!-- =================================END event==================================== -->
+@else
+        
+<div class="card">
+        <h3 class="card-header text-white" style="background-color: #3964B7;" ><b>No Events Yet</b></h3>
+         </div>
+@endif
 @endrole
 @role('student_affairs')
+@if(count($events)!=null)
 <form action="{{route('eventActions')}}" method="post">
     @csrf
     <input type="hidden" value="{{$societies}}">
@@ -119,7 +128,12 @@
     @endforeach
     @endforeach
 </form>
-
+@else
+        
+<div class="card">
+        <h3 class="card-header text-white" style="background-color: #3964B7;" ><b>No Events Yet</b></h3>
+         </div>
+@endif
 @endrole
 
 @endsection
